@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+
+    background-color: #0d3349;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+
+    padding: 5%;
+}
+
+#graph-container {
+    height: 80%;
+    width: 85%;
+
+    background-color: #0d3349;
+}
+
+canvas.sigma-labels {
+    opacity: 0;
+}
+
+canvas.sigma-labels:hover {
+    opacity: 1;
+    z-index: 9999;
+}

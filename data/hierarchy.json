@@ -1,0 +1,44 @@
+[
+    {
+        "id": "hello-it",
+        "link": "https://t.me/hello_it_community",
+        "nodes": [
+            {
+                "id": "hello-it-dev",
+                "link": "https://t.me/hello_it_dev",
+                "nodes": [
+                    {
+                        "id": "hello-it-dev-spring",
+                        "link": "https://t.me/hello_it_dev_spring",
+                        "nodes": []
+                    }
+                ]
+            },
+            {
+                "id": "hello-it-qa",
+                "link": "https://t.me/hello_it_qa",
+                "nodes": []
+            },
+            {
+                "id": "hello-it-devops",
+                "link": "https://t.me/hello_it_devops",
+                "nodes": []
+            },
+            {
+                "id": "hello-it-web",
+                "link": "https://t.me/hello_it_web",
+                "nodes": []
+            },
+            {
+                "id": "hello-it-chat",
+                "link": "https://t.me/hello_it_chat",
+                "nodes": []
+            },
+            {
+                "id": "hello-it-start",
+                "link": "https://t.me/hello_it_start",
+                "nodes": []
+            }
+        ]
+    }
+]

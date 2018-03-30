@@ -1,0 +1,85 @@
+{
+    "nodes": [
+        {
+            "id": "hello-it",
+            "label": "hello-it",
+            "x": 50,
+            "y": 50,
+            "size": 5
+        },
+        {
+            "id": "hello-it-dev",
+            "label": "hello-it-dev",
+            "x": 45,
+            "y": 58.5,
+            "size": 5
+        },
+        {
+            "id": "hello-it-qa",
+            "label": "hello-it-qa",
+            "x": 55,
+            "y": 58.5,
+            "size": 5
+        },
+        {
+            "id": "hello-it-devops",
+            "label": "hello-it-devops",
+            "x": 45,
+            "y": 41.5,
+            "size": 5
+        },
+        {
+            "id": "hello-it-web",
+            "label": "hello-it-web",
+            "x": 55,
+            "y": 41.5,
+            "size": 5
+        },
+        {
+            "id": "hello-it-chat",
+            "label": "hello-it-chat",
+            "x": 40,
+            "y": 50,
+            "size": 5
+        },
+        {
+            "id": "hello-it-start",
+            "label": "hello-it-start",
+            "x": 60,
+            "y": 50,
+            "size": 5
+        }
+    ],
+    "edges": [
+        {
+            "id": "edge-1-1",
+            "source": "hello-it",
+            "target": "hello-it-dev"
+        },
+        {
+            "id": "edge-1-2",
+            "source": "hello-it",
+            "target": "hello-it-qa"
+        },
+        {
+            "id": "edge-1-3",
+            "source": "hello-it",
+            "target": "hello-it-devops"
+        },
+        {
+            "id": "edge-1-4",
+            "source": "hello-it",
+            "target": "hello-it-web"
+        },
+        {
+            "id": "edge-1-5",
+            "source": "hello-it",
+            "target": "hello-it-chat"
+        },
+        {
+            "id": "edge-1-6",
+            "source": "hello-it",
+            "target": "hello-it-start"
+        }
+    ]
+}
