@@ -19,7 +19,15 @@ let App = (function() {
 
     function retrieveAllChats(json) {
         // TODO: Flat map chats' configuration
-        return {};
+        return {
+            "hello-it":"https://t.me/hello_it_community",
+            "hello-it-dev":"https://t.me/hello_it_dev",
+            "hello-it-qa":"https://t.me/hello_it_qa",
+            "hello-it-devops":"https://t.me/hello_it_devops",
+            "hello-it-web":"https://t.me/hello_it_web",
+            "hello-it-chat":"https://t.me/hello_it_chat",
+            "hello-it-start":"https://t.me/hello_it_start"
+        };
     }
 
     function initSigma(json) {
