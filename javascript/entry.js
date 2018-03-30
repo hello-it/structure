@@ -1,4 +1,4 @@
-let App = (function() {
+let App = (function () {
     let hierarchy_path = "data/graph.json", // TODO: Will be fixed to hierarchy.json
         container_id = 'graph-container',
         chats = {},
@@ -20,13 +20,13 @@ let App = (function() {
     function retrieveAllChats(json) {
         // TODO: Flat map chats' configuration
         return {
-            "hello-it":"https://t.me/hello_it_community",
-            "hello-it-dev":"https://t.me/hello_it_dev",
-            "hello-it-qa":"https://t.me/hello_it_qa",
-            "hello-it-devops":"https://t.me/hello_it_devops",
-            "hello-it-web":"https://t.me/hello_it_web",
-            "hello-it-chat":"https://t.me/hello_it_chat",
-            "hello-it-start":"https://t.me/hello_it_start"
+            "hello-it": "https://t.me/hello_it_community",
+            "hello-it-dev": "https://t.me/hello_it_dev",
+            "hello-it-qa": "https://t.me/hello_it_qa",
+            "hello-it-devops": "https://t.me/hello_it_devops",
+            "hello-it-web": "https://t.me/hello_it_web",
+            "hello-it-chat": "https://t.me/hello_it_chat",
+            "hello-it-start": "https://t.me/hello_it_start"
         };
     }
 
@@ -35,9 +35,11 @@ let App = (function() {
             graph: json,
             container: container_id,
             settings: {
+                labelThreshold: 0,
                 defaultLabelColor: blue,
                 defaultEdgeColor: white,
-                defaultNodeColor: white
+                defaultNodeColor: white,
+                sideMargin: 2
             }
         });
 
@@ -51,7 +53,7 @@ let App = (function() {
     }
 
     return {
-        initialize: function() {
+        initialize: function () {
             loadHierarchy(initSigma);
         }
     }

@@ -5,49 +5,49 @@
             "label": "hello-it",
             "x": 50,
             "y": 50,
-            "size": 5
+            "size": 8
         },
         {
             "id": "hello-it-dev",
             "label": "hello-it-dev",
             "x": 45,
             "y": 58.5,
-            "size": 5
+            "size": 8
         },
         {
             "id": "hello-it-qa",
             "label": "hello-it-qa",
             "x": 55,
             "y": 58.5,
-            "size": 5
+            "size": 8
         },
         {
             "id": "hello-it-devops",
             "label": "hello-it-devops",
             "x": 45,
             "y": 41.5,
-            "size": 5
+            "size": 8
         },
         {
             "id": "hello-it-web",
             "label": "hello-it-web",
             "x": 55,
             "y": 41.5,
-            "size": 5
+            "size": 8
         },
         {
             "id": "hello-it-chat",
             "label": "hello-it-chat",
             "x": 40,
             "y": 50,
-            "size": 5
+            "size": 8
         },
         {
             "id": "hello-it-start",
             "label": "hello-it-start",
             "x": 60,
             "y": 50,
-            "size": 5
+            "size": 8
         }
     ],
     "edges": [

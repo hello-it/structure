@@ -13,13 +13,11 @@ html, body {
 .container {
     height: 100%;
     width: 100%;
-
-    padding: 5%;
 }
 
 #graph-container {
-    height: 80%;
-    width: 85%;
+    height: 100%;
+    width: 100%;
 
     background-color: #0d3349;
 }
