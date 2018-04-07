@@ -26,7 +26,7 @@ let App = (function () {
                     for (let index in points) {
                         let point = points[index];
 
-                        if (Math.sqrt(Math.pow(point.x - newPoint.x, 2) + Math.pow(point.y - newPoint.y, 2)) < 2) {
+                        if (Math.sqrt(Math.pow(point.x - newPoint.x, 2) + Math.pow(point.y - newPoint.y, 2)) < 10) {
                             return true;
                         }
                     }
@@ -109,7 +109,7 @@ let App = (function () {
         return report;
     }
 
-    function initSigma(json) {
+    function initSigma(configuration) {
         let settings = {
             labelThreshold: 0,
             defaultLabelColor: blue,
@@ -119,7 +119,7 @@ let App = (function () {
         };
 
         let s = new sigma({
-            graph: json,
+            graph: configuration,
             container: container_id,
             settings: settings
         });
