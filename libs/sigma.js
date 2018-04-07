@@ -1,3 +1,5 @@
+var global_nodes = {}
+
 ;(function (undefined) {
     'use strict';
 
@@ -4890,6 +4892,7 @@
 
             // Pushing the element in a leaf node
             quad.elements.push(el);
+            global_nodes[el.id] = el;
         }
     }
 
@@ -11795,7 +11798,7 @@
      */
     sigma.misc.drawHovers = function (prefix) {
         var self = this,
-            hoveredNodes = {},
+            hoveredNodes = global_nodes,
             hoveredEdges = {};
 
         this.bind('overNode', function (event) {
