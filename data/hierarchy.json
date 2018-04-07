@@ -9,35 +9,37 @@
                 "nodes": [
                     {
                         "id": "hello-it-dev-spring",
-                        "link": "https://t.me/hello_it_dev_spring",
-                        "nodes": []
+                        "link": "https://t.me/hello_it_dev_spring"
+                    },
+                    {
+                        "id": "hello-it-dev-kotlin",
+                        "link": "https://t.me/hello_it_dev_kotlin"
                     }
                 ]
             },
             {
                 "id": "hello-it-qa",
-                "link": "https://t.me/hello_it_qa",
-                "nodes": []
+                "link": "https://t.me/hello_it_qa"
             },
             {
                 "id": "hello-it-devops",
-                "link": "https://t.me/hello_it_devops",
-                "nodes": []
+                "link": "https://t.me/hello_it_devops"
             },
             {
                 "id": "hello-it-web",
-                "link": "https://t.me/hello_it_web",
-                "nodes": []
+                "link": "https://t.me/hello_it_web"
             },
             {
                 "id": "hello-it-chat",
-                "link": "https://t.me/hello_it_chat",
-                "nodes": []
+                "link": "https://t.me/hello_it_chat"
             },
             {
                 "id": "hello-it-start",
-                "link": "https://t.me/hello_it_start",
-                "nodes": []
+                "link": "https://t.me/hello_it_start"
+            },
+            {
+                "id": "hello-it-hr",
+                "link": "https://t.me/hello_it_hr"
             }
         ]
     }

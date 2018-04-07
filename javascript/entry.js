@@ -1,5 +1,5 @@
 let App = (function () {
-    let hierarchy_path = "data/graph.json", // TODO: Will be fixed to hierarchy.json
+    let hierarchy_path = "data/hierarchy.json",
         container_id = 'graph-container',
         chats = {},
         white = '#ffffff',
@@ -12,35 +12,116 @@ let App = (function () {
         })
     }
 
-    function convertToSigmaConfiguration(json) {
-        // TODO: Convert hierarchy configuration to Sigma configuration
-        return json;
+    function convertToSigmaConfiguration(hierarchy) {
+        let configuration = {
+            'nodes': [],
+            'edges': []
+        };
+
+        let points = [];
+
+        let parseNodes = function (chat, level) {
+            let generatePoint = function () {
+                let hasAnotherOnePointNearly = function (points, newPoint) {
+                    for (let index in points) {
+                        let point = points[index];
+
+                        if (Math.sqrt(Math.pow(point.x - newPoint.x, 2) + Math.pow(point.y - newPoint.y, 2)) < 2) {
+                            return true;
+                        }
+                    }
+                    return false;
+                };
+
+                let point = {};
+
+                do {
+                    point = {
+                        x: 50 + (Math.floor(Math.random() * 21) - 10) * level,
+                        y: 50 + (Math.floor(Math.random() * 21) - 10) * level
+                    };
+                } while (hasAnotherOnePointNearly(points, point));
+
+                points.push(point);
+                return point;
+            };
+
+            let point = generatePoint(level);
+
+            configuration['nodes'].push({
+                'id': chat.id,
+                'label': chat.id,
+                'x': point.x,
+                'y': point.y,
+                "size": 10 - level * 2
+            });
+
+            if (chat.hasOwnProperty('nodes')) {
+                let nodes = chat['nodes'];
+                for (let index in nodes) {
+                    let node = nodes[index];
+
+                    configuration['edges'].push({
+                        'id': 'edge-' + level + '-' + (level + 1) + '-' + (index + 1),
+                        'source': chat.id,
+                        'target': node.id
+                    });
+
+                    parseNodes(node, level + 1);
+                }
+            }
+        };
+
+        for (let index in hierarchy) {
+            let community = hierarchy[index];
+            parseNodes(community, 1);
+        }
+
+        return configuration;
     }
 
-    function retrieveAllChats(json) {
-        // TODO: Flat map chats' configuration
-        return {
-            "hello-it": "https://t.me/hello_it_community",
-            "hello-it-dev": "https://t.me/hello_it_dev",
-            "hello-it-qa": "https://t.me/hello_it_qa",
-            "hello-it-devops": "https://t.me/hello_it_devops",
-            "hello-it-web": "https://t.me/hello_it_web",
-            "hello-it-chat": "https://t.me/hello_it_chat",
-            "hello-it-start": "https://t.me/hello_it_start"
+    function retrieveAllChats(hierarchy) {
+        let chats = [];
+
+        let retrieveAllChatsRecursively = function (chat) {
+            chats.push(chat);
+            if (chat.hasOwnProperty('nodes')) {
+                let nodes = chat['nodes'];
+                for (let node in nodes) {
+                    retrieveAllChatsRecursively(nodes[node]);
+                }
+            }
         };
+
+        for (let community in hierarchy) {
+            let tree = hierarchy[community];
+            retrieveAllChatsRecursively(tree);
+        }
+
+        let report = {};
+
+        for (let chat in chats) {
+            let object = chats[chat];
+
+            report[object.id] = object.link;
+        }
+
+        return report;
     }
 
     function initSigma(json) {
+        let settings = {
+            labelThreshold: 0,
+            defaultLabelColor: blue,
+            defaultEdgeColor: white,
+            defaultNodeColor: white,
+            sideMargin: 2
+        };
+
         let s = new sigma({
             graph: json,
             container: container_id,
-            settings: {
-                labelThreshold: 0,
-                defaultLabelColor: blue,
-                defaultEdgeColor: white,
-                defaultNodeColor: white,
-                sideMargin: 2
-            }
+            settings: settings
         });
 
         s.bind('clickNode', function (event) {
